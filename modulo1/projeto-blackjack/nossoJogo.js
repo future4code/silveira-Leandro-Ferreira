@@ -12,17 +12,40 @@
  */
 // 1)
 
-console.log(`Boas vinda ao jogo BlackJack!`)
+//Início
 
-// 2)
+console.log(`Boas vindas ao jogo BlackJack!`)
 
-console.log((confirm(`Quer iniciar uma nova rodada?`)))
+if (confirm(`Quer iniciar uma nova rodada?`)){
+  console.log(`Iniciando uma nova rodada`) 
+
+//Começando o jogo
+
+//Sortear cartas e somar pontos
+
+const cartasUsuário = [ comprarCarta(), comprarCarta()];
+const cartasComputador = [comprarCarta(), comprarCarta()];
+
+const pontosUsuario = cartasUsuário[0].valor + cartasUsuário[1]. valor;
+const pontosComputador = cartasComputador[0].valor + cartasComputador[1].valor;
+
+
+console.log(`Usuário - cartas:${cartasUsuário[0].texto} ${cartasUsuário[1].texto} - pontuação ${pontosUsuario}"`)
+console.log(`Computador - cartas:${cartasComputador[0].texto} ${cartasComputador[1].texto} - pontuação ${pontosComputador}"`)
+
+if (pontosUsuario > pontosComputador) {
+
+   console.log(`"O usuário ganhou!"`)
+
+} else if(pontosUsuario < pontosComputador) {
+
+   console.log(`"O computador ganhou!"`)
+
+
+}else{ console.log(`"Empate!"`)}
 
 
 
-// 3) 
+ }else{ console.log(`O jogo acabou`);}
 
-if (confirm == true){ 
-  console.log( `Iniciando uma nova rodada`) 
 
- }else{ console.log( `O jogo acabou`);}
