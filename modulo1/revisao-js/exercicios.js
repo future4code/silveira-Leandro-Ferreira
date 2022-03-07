@@ -33,25 +33,28 @@ return arrayPares
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-    {
-        var arrayParesElevados = [];
-        for (i = 0; i<array.length; i++)
-      if (array[i]%2 === 0){
-      
-      arrayParesElevados.push(array[i]);
+    var arrayParesElev = []
+    var arrayPares = [];
+  for (i = 0; i<array.length; i++)
+if (array[i]%2 === 0){
 
-Math.pow(arrayParesElevados, 2)
-      
-      }
-      return arrayParesElevados
-      }
-      
+arrayPares.push(array[i] **2)
+
+}
+
+
+return arrayPares
+    
+ 
  
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-  
+var maior  = apply(array)
+    
+S
+  return maior
 }
 
 // EXERCÍCIO 07
