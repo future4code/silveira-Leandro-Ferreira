@@ -51,10 +51,15 @@ return arrayPares
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-var maior  = apply(array)
-    
-S
-  return maior
+
+var maiorNumero = array.reduce(function(a, b) {
+
+    return Math.max(a,b);
+
+}, - Infinity)
+  
+
+return maiorNumero
 }
 
 // EXERCÍCIO 07
