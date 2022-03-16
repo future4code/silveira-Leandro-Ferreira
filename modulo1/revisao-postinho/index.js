@@ -4,7 +4,7 @@
 
 // a-)Comparador de desigualdade a!==b 
 // Exemplo:
-
+/*
 function checarDesigualdade(a, b) {
 
     return `No comparador de desigualdade ${a}!==${b} é ${a !== b}`
@@ -84,14 +84,14 @@ console.log(login());
 // Exercício 5----------------------------------------------------------------------------------------------------
 
 function primeiraDose() {
-    const nome = Prompt("Qual é o seu nome?")
-    const vacina = Prompt("Qual a vacina que você está utilizando?")
+    const nomeDoUsuario = Prompt("Qual é o seu nome?")
+    const nomeDaVacina = Prompt("Qual a vacina que você está utilizando?")
     let tempo = 0
     let  data = new Date
   
      
 
-    switch(vacina){
+    switch(nomeDaVacina){
         case "coronavac":
         tempo = 28
         break
@@ -108,7 +108,7 @@ function primeiraDose() {
     data.setDate(data.getDate() +tempo)
     const dataFormatada = data.toLocaleDateString()
 
-console.log(`Olá ${nome}! A próxima dose da ${vacina} é daqui a ${tempo} dias. Compareça no posto na data ${dataFormatada}.`)
+return(`Olá ${nomeDoUsuario}! A próxima dose da ${nomeDaVacina} é daqui a ${tempo} dias. Compareça no posto na data ${dataFormatada}.`)
 
 
 
@@ -121,31 +121,36 @@ console.log(`Olá ${nome}! A próxima dose da ${vacina} é daqui a ${tempo} dias
 
 
 
-    console.log(`Olá ${nome}! A p`)
+    console.log(primeiraDose)
 
     //  Sua lógica aqui
 
 
 }
-console.log(primeiraDose())
+console.log(primeiraDose)
 
-
+*/
 // LOOP+CONDICIONAL
 
 // Exercício 6 -------------------------------------------------------------------------------------
 
-const segundaDose = (nomeDoUsuario) => {
-    const usuarios = [
-        { nome: "Artur", imunizacao: "incompleta" },
-        { nome: "Barbara", imunizacao: "incompleta" },
-        { nome: "Carlos", imunizacao: "incompleta" }
-    ]
-
-    //  Sua lógica aqui
 
 
-}
-console.log(segundaDose("Barbara"));
+    const segundaDose = (nomeDoUsuario) => {
+        const usuarios = [
+            { nome: "Artur", imunizacao: "incompleta" },
+            { nome: "Barbara", imunizacao: "incompleta" },
+            { nome: "Carlos", imunizacao: "incompleta" }
+        ]
+        for (let i = 0; i < usuarios.length; i++){
+            if (usuarios[i].nome == "Barbara"){
+                usuarios[i].imunizacao = "completa"
+            }
+        }
+        return usuarios
+    }
+    console.log(segundaDose("Barbara"));
+
 
 // Exercício 7 --------------------------------------------------------------------------------------
 
@@ -191,19 +196,100 @@ const usuarios = [
     }
 
 ]
+// 3)
+const cadastroDesafio = (usuarios) => {
 
-const cadastroDesafio = () => {
-    //  Sua lógica aqui
+    let nome = prompt("Qual é o seu nome?");
+    let ano = prompt ("Qual ano?");
+    let nacionalidade = prompt("Qual é a sua nacionalidade");
+    let senha = ("Qual é a sua senha?")
+
+    let novaPessoa = {
+        nome: nome,
+        ano: ano,
+        nacionalidade: nacionalidade,
+        senha: senha
+
+    }
+
+    usuarios.push(novaPessoa)
+    return usuarios
+    
 }
-console.log(cadastroDesafio());
+console.log(cadastroDesafio(usuarios));
+
+//4)
 
 const loginDesafio = () => {
-    //  Sua lógica aqui
-}
-console.log(loginDesafio());
 
-const primeiraDoseDesafio = () => {
+const senhaUsuario = prompt ("Digite a sua senha")
+let mensagem
+for (let i=0; i< usuarios.length; i++){
+    if(usuarios[i].senha === senhaUsuario){
+        mensagem = "acesso liberado"
+        return mensagem}
+
+    if (mensagem === undefined) {
+
+        console.log("Senha inválida")
+    }
+}
+}
+console.log(loginDesafio(usuarios))
+   
+
+console.log(loginDesafio())
+
+
+//5)
+
+
+const primeiraDoseDesafio = (usuarios) => {
 //  Sua lógica aqui
+let vacina = prompt("Insira a vacina tomada")
+let imunizacao = "Incompleta"
+
+usuarios[3] = {...usuarios[3], vacina: vacina, imunizacao: imunizacao}
+
+for(let usuario of usuarios) {
+
+if(usuario,imunizacao === "incompleta"){
+    let tempo = 0
+    let data = new Date
+    switch(usuario.vacina){
+
+        case"coronavac":
+            tempo:28
+            break
+        case "astrazenica":
+            tempo:90
+            break
+        case"pfizer":
+            tempo:90
+            break
+        default:
+            return"Vacina Invválida"
+
+
+    }
+
+    data.setDate(data.getDate() +tempo)
+    const dataFormatada = data.toLocaleDateString()
+
+    console.log(`Olá ${usuario.nome} A próxima dose da ${usuario.vacina} é daqui a ${tempo} dias.  Compareça no posto na ${dataFormatada}. `)
+}else{
+    console.log(`Olá ${usuario.nome}! A sua vacinação está completa, parabéns!`)
+}
+
+
+
+
+}
+return usuarios
+
+
+}
+
 }
 console.log(primeiraDoseDesafio())
 const segundaDoseDesafio = (nomeDoUsuario) => {
